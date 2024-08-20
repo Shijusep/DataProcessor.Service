@@ -32,7 +32,7 @@ public class ExpenseServiceTests
         Assert.Equal("DEV632", result.expense.CostCentre);
         Assert.Equal(35000, result.expense.Total);
         // Assuming you have a tax rate defined and calculated correctly in your service
-        var expectedSalesTax = result.expense.Total * TaxRate / (1 + TaxRate);
+        var expectedSalesTax = result.expense.Total * TaxRate;
         var expectedTotalExcludingTax = result.expense.Total - expectedSalesTax;
         Assert.Equal(expectedSalesTax, result.expense.SalesTax);
         Assert.Equal(expectedTotalExcludingTax, result.expense.TotalExcludingTax);

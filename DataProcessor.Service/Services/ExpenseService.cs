@@ -92,7 +92,7 @@ public class ExpenseService : IExpenseService
                 expense.Date = parsedDate;
             }
 
-            expense.SalesTax = total * _salesTaxRate / (1 + _salesTaxRate);
+            expense.SalesTax = total * _salesTaxRate;
             expense.TotalExcludingTax = total - expense.SalesTax;
 
             ExtractUnknownTags(expenseNode, expense.UnknownTags);
